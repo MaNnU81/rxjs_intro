@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { RedditService } from './services/reddit/reddit.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,17 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'y';
+  
+// redditServ = inject(RedditService)
+
+constructor(private redditServ: RedditService) {
+  this.redditServ.getData()
+  .subscribe({
+    next: data => console.log(data),     
+    error: err => console.log(err)
+    
+  })
+  
+}
+
 }
