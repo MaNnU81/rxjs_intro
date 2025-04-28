@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ComService } from '../../services/com/com.service';
 
 @Component({
   selector: 'app-master',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './master.component.scss'
 })
 export class MasterComponent {
-
+  comService = inject(ComService);
 }
