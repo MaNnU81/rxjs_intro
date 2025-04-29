@@ -1,5 +1,8 @@
 <div>
     <button (click)="subscribeSbj()">subscribe sbj</button>
+    <button (click)="unsubscribe()">unsubscribe</button>
     <button (click)="subscribeBesbj()">subscribe Besbj</button>
     <button (click)="subscribeResbj()">subscribe Resbj</button>
+
+    <span>{{comService.besbj | async }}</span>
 </div>
